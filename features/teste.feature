@@ -1,7 +1,12 @@
 # -- FILE: features/example.feature
-Feature: Showing off behave
+Feature: Soma
+"""
+Sendo um usuário eu quero somar dois números para que seja possível receber o resultado
+"""
+  Scenario: Soma de inteiros positivos
+    When somar "2" com "2"
+    Then o resultado deve ser "4"
 
-  Scenario: Run a simple test
-    Given we have behave installed
-     When we implement 5 tests
-     Then behave will test them for us!
+  Scenario: Soma de inteiros negativos
+    When somar "-2" com "-2"
+    Then o resultado deve ser "-4"

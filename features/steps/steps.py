@@ -1,16 +1,9 @@
-# -- FILE: features/steps/example_steps.py
-from behave import given, when, then, step
+from behave import given, when, then
 
-@given('we have behave installed')
-def step_impl(context):
+@when('somar "{num1:d}" com "{num2:d}"')
+def test_soma_dois_valoes(context, num1, num2):
     pass
 
-@when('we implement {number:d} tests')
-def step_impl(context, number):  # -- NOTE: number is converted into integer
-    assert number > 1 or number == 0
-    context.tests_count = number
-
-@then('behave will test them for us!')
-def step_impl(context):
-    assert context.failed is False
-    assert context.tests_count >= 0
+@then('o resultado deve ser "{resultado:d}"')
+def assert_result(context, result):
+    pass
