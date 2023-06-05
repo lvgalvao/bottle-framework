@@ -1,12 +1,18 @@
 # -- FILE: features/example.feature
-Feature: Soma
-"""
-Sendo um usuário eu quero somar dois números para que seja possível receber o resultado
-"""
-  Scenario: Soma de inteiros positivos
-    When somar "2" com "2"
-    Then o resultado deve ser "4"
-
-  Scenario: Soma de inteiros negativos
-    When somar "-2" com "-2"
-    Then o resultado deve ser "-4"
+Feature: Cadastro
+  Scenario: Efetuar cadastro com sucesso
+    Given Acessar o site "http://localhost:8080/cadastro"
+    When insert "nome" "Luciano"
+    And insert "sobrenome" "Filho"
+    And insert "usuario" "Lvgalvao"
+    And insert "sexo" "Masculino"
+    And insert "senha" "123456"
+    And insert "email" "lvgalvaofilho@gmail.com"
+    And insert "nascimento" "06/03/1993"
+    Then press button "Enviar"
+    Then I should see 
+    """
+    Bem vindo Luciano
+    Usuário: Lvgalvao
+    Senha: 123456
+    """

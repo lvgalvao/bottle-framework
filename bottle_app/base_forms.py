@@ -10,7 +10,7 @@ class Cadastro(Form):
     gender = SelectField('Sexo', choices=[('masculino', 'Masculino'),
                                           ('feminino', 'Feminino')])
     btnSend = SubmitField('Enviar')
-    age = DateField('Nascimento', format='%d/%m/%Y')
+    age = DateField('Nascimento', format='%d-%m-%Y')
 
 
 class Login(Form):

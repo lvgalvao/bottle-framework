@@ -41,14 +41,12 @@ def castro_post():
     email = request.forms.get('email')
     fullDate = request.forms.get('age')
 
-    regex = r_compile(r'\d{2}/\d{2}/\d{4}')
+    # regex = r_compile(r'\d{2}/\d{2}/\d{4}')
 
     if len(password) < 6:
         msg = 'Senha inválida, use ao menos 6 caracteres'
     elif '@' not in email:
         msg = 'Email inválido'
-    elif not regex.findall(fullDate):
-        msg = 'Data inválida'
     else:
         msg = '''
               Bem vind{} {}
